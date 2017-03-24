@@ -1,0 +1,28 @@
+---
+server:
+  port: 8888
+security:
+  basic:
+    enabled: true
+  user:
+    name: jennifer
+    password: password
+spring:
+  cloud:
+    config:
+      server:
+        encrypt:
+          enabled: false
+        git:
+          uri: https://github.com/jelworthy/microservices-cloudconfig
+          #username: uname
+          #password: pass
+          search-paths:
+          - 'station*'
+          repos:
+            perf:
+              pattern:
+                - "*/perf"
+              uri: https://github.com/jelworthy/microservices-cloudconfig-perf
+              search-paths:
+                - 'station*'
